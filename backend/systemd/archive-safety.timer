@@ -1,0 +1,10 @@
+[Unit]
+Description=Process safety for the Character Archive
+
+[Timer]
+OnCalendar=hourly
+Persistent=false
+Unit=archive-safety.service
+
+[Install]
+WantedBy=timers.target

@@ -1,0 +1,2 @@
+MEILISEARCH_HOST = 'http://172.0.3.102:7700'
+MEILISEARCH_MASTER_KEY = 'LohfahwaeVaes5zo3aeshaitheimuxooh8Eij0eivah5dieyeichoota2cae4guth6phoBi4VahquiDaegh3mu8phal2uPh9IKi9upheuqu1ze8vaep9Ohs6Hahtoh1d'

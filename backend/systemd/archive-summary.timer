@@ -1,0 +1,10 @@
+[Unit]
+Description=Process summaries for the Character Archive
+
+[Timer]
+OnCalendar=daily
+Persistent=false
+Unit=archive-summary.service
+
+[Install]
+WantedBy=timers.target

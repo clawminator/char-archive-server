@@ -1,0 +1,301 @@
+/* Base Element Styling */
+
+.char-list {
+    @apply grid gap-0 place-items-center;
+}
+
+.char-list-item {
+    @apply py-4 rounded;
+}
+
+.char-item-grid {
+    @apply w-full;
+}
+
+.char-list-source-container {
+    @apply text-center;
+}
+
+.char-list-avatar {
+    @apply flex items-center rounded;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.char-list-name {
+    @apply text-center mt-[5px];
+}
+
+/* ============================================= */
+/* Initial (non-mobile) styles */
+
+@media (min-width: 575px) {
+    .char-list {
+        margin: auto;
+    }
+
+    .char-list-item {
+        height: 483px;
+        width: 250px;
+    }
+
+    .char-list-avatar {
+        height: 200px;
+        width: 200px;
+    }
+
+    .char-list-image {
+        @apply justify-center;
+    }
+
+    .char-list-desc {
+        font-size: 10pt;
+        padding: 8px;
+    }
+
+    .char-list-name > a {
+        font-size: 13pt;
+    }
+
+    .char-list-author {
+        font-size: 13px;
+    }
+}
+
+/* ============================================= */
+
+@media (min-width: 2000px) {
+    .char-list {
+        width: 1500px;
+        @apply grid-cols-5;
+    }
+
+    .char-list-item {
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+}
+
+@media (min-width: 1742px) and (max-width: 2000px) {
+    .char-list {
+        width: 80%;
+        @apply grid-cols-5;
+    }
+
+    .char-list-item {
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+}
+
+@media (min-width: 1570px) and (max-width: 1742px) {
+    .char-list {
+        width: 90%;
+        @apply grid-cols-5;
+    }
+
+    .char-list-item {
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+}
+
+@media (min-width: 1400px) and (max-width: 1570px) {
+    .char-list {
+        width: 100%;
+        @apply grid-cols-5;
+    }
+
+    .char-list-item {
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+}
+
+@media (max-width: 1400px) {
+    .char-list {
+        @apply grid-cols-4;
+    }
+
+    .char-list-item:nth-child(5) {
+        display: none;
+    }
+}
+
+@media (max-width: 1400px) {
+    .char-list {
+        @apply grid-cols-4;
+    }
+
+    .char-list-item:nth-child(5) {
+        display: none;
+    }
+}
+
+@media (max-width: 1112px) {
+    .char-list {
+        @apply grid-cols-3;
+    }
+
+    .char-list-item:nth-child(5), .char-list-item:nth-child(4) {
+        display: none;
+    }
+}
+
+@media (max-width: 840px) {
+    .char-list {
+        width: 45%;
+        min-width: 0;
+        grid-template-columns: 250px 250px;
+        @apply grid-rows-2;
+        @apply gap-2;
+    }
+
+    .char-list {
+        width: 100%;
+        @apply grid-cols-2;
+        @apply grid-rows-2;
+    }
+
+    .char-list-item {
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    .char-list-item:nth-child(4) {
+        display: initial;
+    }
+}
+
+@media (max-width: 575px) {
+    .char-list {
+        width: 100%;
+        @apply grid-cols-1;
+        @apply grid-rows-5;
+    }
+
+    .char-list-item {
+        width: 100%;
+    }
+
+    .char-item-grid {
+        @apply grid;
+        @apply grid-cols-2;
+        @apply grid-rows-1;
+    }
+
+    .char-list-name {
+        @apply flex;
+        @apply justify-center;
+        @apply align-middle;
+        @apply items-center;
+    }
+
+    .char-list-desc {
+        font-size: 13pt;
+        padding: 8px 8px 8px 15px;
+    }
+
+    .char-list-name > a {
+        font-size: 15pt;
+    }
+
+    .char-list-author {
+        font-size: 17px;
+    }
+
+    .char-list-item:nth-child(5) {
+        display: initial;
+    }
+
+    .char-list-source-container {
+        @apply grid grid-cols-2;
+    }
+
+    .char-list-source {
+        @apply col-start-2;
+    }
+}
+
+@media (max-width: 460px) {
+    .char-item-grid, .char-list-source-container {
+        display: initial;
+    }
+
+    .char-list-avatar {
+        height: 200px;
+        width: 200px;
+    }
+
+    .char-list-source {
+        grid-column-start: unset;
+    }
+}
+
+
+.char-list-item {
+    padding: 10px;
+    /*@apply bg-gray-300;*/
+    list-style: none;
+    @apply shadow-lg;
+}
+
+.char-latest-updated {
+    color: var(--color-text);
+    text-decoration: none;
+    background-color: unset;
+}
+
+.char-latest-updated:hover {
+    color: var(--color-text);
+    text-decoration: none;
+    background-color: unset;
+}
+
+.char-list-desc {
+    line-height: 20px;
+    width: 100%;
+    height: auto;
+}
+
+.char-list-image > a, .char-list-name > a, .char-list-author, .char-list-desc > a {
+    color: var(--color-text);
+    text-decoration: none;
+}
+
+.char-list-image > a:hover, .char-list-desc > a:hover {
+    color: var(--color-text);
+    text-decoration: none;
+    background-color: unset;
+}
+
+.char-list-name > a:hover, .char-list-author:hover {
+    color: var(--color-text);
+    text-decoration: underline;
+    background-color: unset;
+}
+
+.char-list-author {
+    line-height: 12pt;
+    margin-bottom: 7px;
+    font-style: italic;
+}
+
+.char-list-name {
+    line-height: 14pt;
+    margin-bottom: 10px;
+}
+
+.char-list-name > a {
+    font-weight: bold;
+}
+
+.char-list-avatar > a, .char-list-avatar > a > img {
+    width: 200px;
+    height: 200px;
+}
+
+.char-list-forced-auto-grid {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)) !important;
+    grid-gap: 0;
+}

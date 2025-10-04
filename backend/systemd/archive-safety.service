@@ -1,0 +1,13 @@
+[Unit]
+Description=Process safety for the Character Archive
+After=network.target
+
+[Service]
+User=server
+Group=server
+SyslogIdentifier=archive-safety
+ExecStart=/srv/server/venv/bin/python /srv/server/chub-archive-server/backend/safety.py --service --no-ai
+LimitNOFILE=30000
+
+[Install]
+WantedBy=multi-user.target

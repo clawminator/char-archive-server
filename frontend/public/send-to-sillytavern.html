@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Send to SillyTavern</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+
+        h1 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        p {
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 12px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            margin-bottom: 20px;
+        }
+
+        a#navigate-link {
+            display: block;
+            background-color: #7C0818;
+            color: white;
+            padding: 14px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 18px;
+            text-align: center;
+            text-decoration: none;
+            margin-top: 30px;
+            transition: background-color 0.3s;
+        }
+
+        a#navigate-link:hover {
+            background-color: #9D2132;
+        }
+
+        .character-info {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 4px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+        }
+
+        .character-info p {
+            margin: 0;
+        }
+
+        .character-info span {
+            font-weight: bold;
+        }
+    </style>
+    <script>
+        // Matomo tracking code
+        var _paq = window._paq = window._paq || [];
+        _paq.push(['trackPageView']);
+        _paq.push(['enableLinkTracking']);
+        (function () {
+            var u = "https://mato.example.com/";
+            _paq.push(['setTrackerUrl', u + 'matomo.php']);
+            _paq.push(['setSiteId', '10']);
+            var d = document, g = d.createElement('script'), s = d.getElementsByTagName('script')[0];
+            g.async = true;
+            g.src = u + 'matomo.js';
+            s.parentNode.insertBefore(g, s);
+        })();
+    </script>
+</head>
+<body>
+<h1>Send to SillyTavern</h1>
+<div class="character-info">
+    <p><span>Character Name:</span> <span id="char-name"></span></p>
+</div>
+<p>
+    This character card can be easily sent to your SillyTavern server using the <a href="https://github.com/Cyberes/sillytavern-internet-import" target="_blank">sillytavern-internet-import</a> plugin. Make sure it's installed.
+</p>
+<label for="server-url">SillyTavern URL:</label>
+<input type="text" id="server-url" value="http://localhost:8000">
+<a id="navigate-link" href="">Go to your SillyTavern server</a>
+
+<script>
+    const serverUrlInput = document.getElementById('server-url');
+    const characterNameElement = document.getElementById('char-name');
+    const navigateLinkElement = document.getElementById('navigate-link');
+    const urlParams = new URLSearchParams(window.location.search);
+
+    window.addEventListener('load', function () {
+        let savedServerUrl = getCookie('sillytavernServerUrl');
+        if (!savedServerUrl) {
+            savedServerUrl = 'http://localhost:8000'
+        }
+        setCookie('sillytavernServerUrl', savedServerUrl, 365);
+        serverUrlInput.text = savedServerUrl;
+        characterNameElement.innerText = decodeURIComponent((new URLSearchParams(window.location.search)).get('name'));
+
+        if (!urlParams.get('url')) {
+            alert('No source URL provided.');
+            return
+        }
+        navigateLinkElement.href = `${savedServerUrl}/api/plugins/internet-import/import?url=${encodeURIComponent(encodeURIComponent(urlParams.get('url')))}`;
+    })
+
+    serverUrlInput.addEventListener('input', function (evt) {
+        setCookie('sillytavernServerUrl', this.value, 365);
+        if (!urlParams.get('url')) {
+            return
+        }
+        navigateLinkElement.href = `${this.value}/api/plugins/internet-import/import?url=${encodeURIComponent(encodeURIComponent(urlParams.get('url')))}`;
+    });
+
+    function setCookie(name, value, days) {
+        const expires = new Date();
+        expires.setTime(expires.getTime() + days * 24 * 60 * 60 * 1000);
+        document.cookie = `${name}=${encodeURIComponent(value)};expires=${expires.toUTCString()};path=/`;
+    }
+
+    function getCookie(name) {
+        const cookieName = `${name}=`;
+        const decodedCookie = decodeURIComponent(document.cookie);
+        const cookieArray = decodedCookie.split(';');
+        for (let i = 0; i < cookieArray.length; i++) {
+            let cookie = cookieArray[i];
+            while (cookie.charAt(0) === ' ') {
+                cookie = cookie.substring(1);
+            }
+            if (cookie.indexOf(cookieName) === 0) {
+                return cookie.substring(cookieName.length, cookie.length);
+            }
+        }
+        return '';
+    }
+</script>
+</body>
+</html>

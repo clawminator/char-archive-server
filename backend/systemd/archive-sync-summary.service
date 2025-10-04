@@ -1,0 +1,13 @@
+[Unit]
+Description=Process search data for the Character Archive with summarization
+After=network.target
+
+[Service]
+User=server
+Group=server
+SyslogIdentifier=archive-sync-summary
+ExecStart=/srv/server/venv/bin/python /srv/server/chub-archive-server/backend/elastic-sync.py --service --summary
+LimitNOFILE=30000
+
+[Install]
+WantedBy=multi-user.target

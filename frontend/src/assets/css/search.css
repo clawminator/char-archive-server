@@ -1,0 +1,11 @@
+@import '@/assets/css/colors.css';
+
+#default-search {
+    border-style: solid;
+    border-width: 2px;
+    border-color: var(--main-red);
+}
+
+#default-search:focus {
+    border-color: var(--navy-blue-light);
+}

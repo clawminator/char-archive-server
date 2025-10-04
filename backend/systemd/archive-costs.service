@@ -1,0 +1,12 @@
+[Unit]
+Description=Process plap costs for the Character Archive
+After=network.target redis-server.service
+
+[Service]
+User=server
+Group=server
+SyslogIdentifier=archive-costs
+ExecStart=/srv/server/venv/bin/python /srv/server/chub-archive-server/backend/tally-money.py --service --redis
+
+[Install]
+WantedBy=multi-user.target

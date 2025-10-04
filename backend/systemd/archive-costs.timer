@@ -1,0 +1,10 @@
+[Unit]
+Description=Process plap costs for the Character Archive
+
+[Timer]
+OnCalendar=daily
+Persistent=false
+Unit=archive-costs.service
+
+[Install]
+WantedBy=timers.target

@@ -1,0 +1,10 @@
+[Unit]
+Description=Process search data for the Character Archive with summarization
+
+[Timer]
+OnCalendar=weelky
+Persistent=false
+Unit=archive-sync-summary.service
+
+[Install]
+WantedBy=timers.target

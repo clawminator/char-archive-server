@@ -1,0 +1,123 @@
+root_dir:                                 /mnt/share/archive/files/
+
+http_port:                                8081
+api_admin_key:                            beeNgaisah6IeNuichah5ac0ooVieng2aixeijojeewail3obei7roo8phi3daiP
+
+initial_crawl:                            true
+crawl_mode_crawl_interval:                3600 # seconds
+
+directory_crawl_workers:                  100
+
+cache_size:                               100000000
+cache_time:                               30 # minutes
+cache_print_new:                          false # only debug
+cache_recache_crawler_limit:              10 # Maximum number of concurrent recache crawls
+
+# Read the files to determine their MIME types.
+# Disabled by default, but if you're having issues with blank MIME types, enable this.
+crawler_parse_mime:                       false
+
+# The size of the unbuffered channel to send paths to the Workers goroutines.
+crawler_channel_buffer_size:              1000
+
+crawl_workers:                            25
+
+# Set to 0 to scale by the amount of Workers: crawler_max_workers * 10
+crawler_worker_job_queue_size:            0
+
+# Cache-Control time in seconds for the /api/list endpoint.
+# Set to 0 to send "no-store" (disable browser caching).
+# Default:                                600 (10 minutes)
+http_api_list_cache_control:              600
+
+# Cache-Control time in seconds for the /api/list endpoint.
+# Set to 0 to send "no-store" (disable browser caching).
+# Default:                                0
+http_api_download_cache_control:          0
+
+# There is a potential DOS if someone asks to parse the MIME data of a very large directory.
+# Per-file parsing is always allowed.
+http_allow_dir_mime_parse:                false
+
+# Reject requests during the initial crawl
+http_allow_during_initial_crawl:          false
+
+# Maximum number of results the /api/search endpoint returns.
+# This should be a somewhat conservative value as the user can just refine their query.
+api_search_max_results:                   50
+
+# Whether to show directory children in search results
+api_search_show_children:                 false
+
+# Enable storing search data in Elasticsearch.
+# If disabled, use the default search method of reading the crazyfs cache.
+elasticsearch_enable:                     false
+
+# Your Elasticsearch endpoint.
+# Default:                                http://localhost:9200
+elasticsearch_endpoint:                   https://172.0.3.105:9200
+
+elasticsearch_sync_enable:                true
+
+# Your Elasticsearch API key.
+# Don't add the key name.
+elasticsearch_api_key:                    aVNxd2M0OEJrZkVuMllNdERoYkM6UDFvX2R4aENTcUN3aEh0QXhkNzFBdw==
+
+# The Elasticsearch index to use.
+# If it does not exist, it will be created.
+# Default:                                crazyfs_search
+elasticsearch_index:                      crazyfs-search
+
+elasticsearch_sync_interval:              1800
+
+elasticsearch_full_sync_interval:         172800
+
+elasticsearch_allow_concurrent_syncs:     false
+
+elasticsearch_full_sync_on_start:         false
+
+# How many concurrent threads to use while syncing with Elastic.
+# Remember, a thread creates load both in the CrazyFS process and the Elastic service, so keep this value conservative.
+# TODO:                                   only used for deleting
+# TODO:                                   implement worker deleting
+elasticsearch_sync_workers:               1000
+
+# Exclude any file or directory that matches these strings.
+# If this is a directory, exclude all children.
+elasticsearch_exclude_patterns:
+  - .git
+
+# TODO:                                   not used?
+# If no Elastic fields are specified, search by this field.
+elasticsearch_default_query_field:        name
+
+elasticsearch_print_changes:              true
+
+elasticsearch_disable_cert_verification:  true
+
+restricted_download_paths:
+  - /
+  - /historical
+  - /third-party
+  - /third-party/Pygmalion Discord Server 04-18-2023
+  - /other
+  - /articles
+  - /logs
+  - /takeout
+
+# Some browsers have trouble displaying some MIME types, for example: https://bugzilla.mozilla.org/show_bug.cgi?id=1319262
+# This sends the `X-Content-Type-Options: nosniff` header to tell them to rely on what MIME type we send.
+# https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Content-Type-Options
+# Enabling this also casts all `text/*` mime types to `text/plain`.
+http_no_mime_sniff_header:                true
+
+# During crawl, read each file to determine its encoding.
+# Enabling this saves some time when starting a download but slows the crawl speed dramatically.
+crawler_parse_encoding:                   false
+
+# TODO:                                   put this in the "http" section
+#http:
+#  headers:
+#    access_control_allow_origin:
+
+http_access_control_allow_origin_header:  '*'

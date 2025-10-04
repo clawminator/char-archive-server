@@ -1,0 +1,14 @@
+[Unit]
+Description=Search Parser microservice
+After=network.target
+
+[Service]
+User=server
+Group=server
+SyslogIdentifier=search-parser
+ExecStart=/usr/bin/node /srv/server/chub-archive-server/backend/search-parser/index.js
+Restart=always
+RestartSec=5s
+
+[Install]
+WantedBy=multi-user.target

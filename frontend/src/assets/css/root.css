@@ -1,0 +1,79 @@
+@import 'base.css';
+@import 'material-icons/iconfont/material-icons.css';
+@import 'colors.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    html {
+        color-scheme: light !important;
+    }
+}
+
+
+#app {
+    font-weight: normal;
+    grid-template-columns: 1fr !important;
+    /*margin: 4vh auto 0;*/
+    /*max-width: 100vw;*/
+    padding: 0;
+    width: 100%;
+}
+
+a,
+.green {
+    text-decoration: none;
+    color: hsla(160, 100%, 37%, 1);
+    transition: 0.4s;
+}
+
+@media (hover: hover) {
+    a:hover {
+        background-color: hsla(160, 100%, 37%, 0.2);
+    }
+}
+
+@media (min-width: 1024px) {
+    body {
+        display: flex;
+        place-items: center;
+    }
+
+    #app {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+}
+
+body {
+    min-height: 100vh;
+    color: var(--color-text);
+    background: var(--color-background);
+    transition: color 0.5s, background-color 0.5s;
+    line-height: 1.6;
+    font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu,
+    Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+    font-size: 15px;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+}
+
+kbd, .font-mono {
+    background: #f2f2f2;
+    padding: 0 1px;
+    border-radius: 3px;
+}
+
+span.material-icons {
+    cursor: default;
+    width: 24px; /* Fix the icons shifting about on page load. */
+    /*height: 24px;*/
+}
+
+.cursor-pointer-force {
+    cursor: pointer !important;
+}

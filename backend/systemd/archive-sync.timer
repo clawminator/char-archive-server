@@ -1,0 +1,10 @@
+[Unit]
+Description=Process search data for the Character Archive
+
+[Timer]
+OnCalendar=hourly
+Persistent=false
+Unit=archive-sync.service
+
+[Install]
+WantedBy=timers.target

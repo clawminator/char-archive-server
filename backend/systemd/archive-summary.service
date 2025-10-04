@@ -1,0 +1,13 @@
+[Unit]
+Description=Process summaries for the Character Archive
+After=network.target
+
+[Service]
+User=server
+Group=server
+SyslogIdentifier=archive-summary
+ExecStart=/srv/server/venv/bin/python /srv/server/chub-archive-server/backend/summarization.py --service
+LimitNOFILE=30000
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,147 @@
+:root {
+    --baby-blue: #96d0ff;
+    --baby-blue-light: #C8E6FF;
+    --navy-blue: #041a31;
+    --navy-blue-light: #264766;
+    --yellow-white: #fdfcf2;
+    --bright-red: #b80031;
+
+    /* Secondary */
+    --gold: #CBA328;
+    --gold-very-light: #FFEAA9;
+    --sea-green: #5C946E;
+    --sea-green-very-light: #B5CFBE;
+    --teal: #247B7B;
+    --teal-very-light: #98D1D1;
+    --brown-sugar: #BB7E5D;
+    --brown-sugar-very-light: #FFDCCA;
+    --violet: #8B687F;
+    --violet-very-light: #C9B9C4;
+    --jasper: #D5573B;
+    --jasper-light: #FFA491;
+    --jasper-very-light: #FFDDD6;
+    --dutch-white: #DBD3AD;
+    --dutch-white-very-light: #EAE3C5;
+    --harvest-gold: #ECA400;
+    --harvest-gold-very-light: #FFF0CC;
+    --cafe-noir: #46351D;
+    --cafe-noir-very-light: #D8C8B0;
+
+
+    /* Unused */
+    --resda-green: #7F9172;
+}
+
+.text-navy-blue {
+    color: var(--navy-blue);
+}
+
+.bg-navy-blue {
+    background-color: var(--navy-blue);
+}
+
+.bg-navy-blue-light {
+    background-color: var(--navy-blue-light);
+}
+
+.bg-baby-blue {
+    background-color: var(--baby-blue);
+}
+
+.bg-baby-blue-light {
+    background-color: var(--baby-blue-light);
+}
+
+.text-baby-blue {
+    color: var(--baby-blue);
+}
+
+.text-bright-red {
+    color: var(--bright-red);
+}
+
+/* Backgrounds */
+.bg-gold {
+    background-color: var(--gold);
+}
+
+.bg-gold-very-llight {
+    /* Misspelled since people were blocking this color due to glowniggers. */
+    background-color: var(--gold-very-light);
+}
+
+.bg-sea-green {
+    background-color: var(--sea-green);
+}
+
+.bg-sea-green-very-light {
+    background-color: var(--sea-green-very-light);
+}
+
+.bg-resda-green {
+    background-color: var(--resda-green);
+}
+
+.bg-teal {
+    background-color: var(--teal);
+}
+
+.bg-brown-sugar {
+    background-color: var(--brown-sugar);
+}
+
+.bg-violet {
+    background-color: var(--violet);
+}
+
+.bg-violet-very-light {
+    background-color: var(--violet-very-light);
+}
+
+.bg-jasper {
+    background-color: var(--jasper);
+}
+
+.bg-jasper-light {
+    background-color: var(--jasper-light);
+}
+
+.bg-jasper-very-light {
+    background-color: var(--jasper-very-light);
+}
+
+.bg-teal-very-light {
+    background-color: var(--teal-very-light);
+}
+
+.bg-brown-sugar-very-light {
+    background-color: var(--brown-sugar-very-light);
+}
+
+.bg-dutch-white-very-light {
+    background-color: var(--dutch-white-very-light);
+}
+
+.bg-harvest-gold-very-light {
+    background-color: var(--harvest-gold-very-light);
+}
+
+.bg-cafe-noir-very-light {
+    background-color: var(--cafe-noir-very-light);
+}
+
+.risuai-blue {
+    @apply bg-blue-700;
+}
+
+.risuai-blue-very-light {
+    @apply bg-blue-200;
+}
+
+.glownigger-bg {
+    @apply bg-gray-300;
+}
+
+.char-tavern-red {
+    background-color: #FFC3C3;
+}

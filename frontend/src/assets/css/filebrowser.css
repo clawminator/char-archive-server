@@ -1,0 +1,234 @@
+.filename {
+    cursor: pointer;
+}
+
+.loader {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    position: fixed;
+    top: 4em; /* height of the top bar */
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 50;
+}
+
+[data-loader="circle"] {
+    border: 2px solid #a29191 !important;
+    border-top-color: var(--main-red) !important;
+}
+
+.folder-icon {
+    width: fit-content;
+    height: fit-content;
+}
+
+.left-column {
+    min-width: 40vw;
+}
+
+.center-column {
+    min-width: 80vw;
+}
+
+.right-column {
+    min-width: 70vw;
+}
+
+.error-overlay {
+    z-index: 70;
+    user-select: none;
+}
+
+.error-overlay-inner {
+    min-width: 30%;
+    min-height: 10%;
+}
+
+.site-disabled {
+    margin: 0 !important;
+    height: 100% !important;
+    overflow: hidden !important;
+    user-select: none !important;
+}
+
+.action-group {
+    z-index: 50;
+}
+
+.action i {
+    transition: all 0.1s ease-in-out 0s;
+    border-radius: 50%;
+    font-size: 1.5rem;
+}
+
+.action:disabled {
+    color: rgb(44, 62, 80, 0.75);
+}
+
+.action:disabled:hover {
+    color: rgb(44, 62, 80, 0.75);
+}
+
+.action:hover {
+    color: var(--main-red);
+    border-radius: 50%;
+}
+
+.action i {
+    font-size: 25pt;
+}
+
+.search-results-modal {
+    z-index: 60;
+    margin: 30px;
+}
+
+.search-results {
+    max-width: 75%;
+    max-height: 75vh;
+}
+
+.file-header p {
+    user-select: none;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.backdrop-blur-xsm {
+    --tw-backdrop-blur: blur(2px);
+    -webkit-backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
+    backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
+}
+
+.directory-path {
+    user-select: none;
+}
+
+.directory-path .path-separator {
+    padding: 0 0.25rem 0 0.25rem;
+    color: black;
+}
+
+.directory-path a {
+    cursor: pointer;
+    color: black;
+}
+
+.directory-path a:hover {
+    background-color: unset !important;
+    text-decoration: underline;
+}
+
+/* Scale the action icons so that the margin between the filebrowser and the icon container always equals that on the right side of the icon container */
+@media (min-width: 1024px) {
+    .front-container {
+        margin: auto !important;
+    }
+}
+
+@media (min-width: 980px) {
+    .front-container {
+        margin-left: 3em;
+    }
+}
+
+@media (min-width: 840px) {
+    .front-container {
+        margin-left: 2em;
+    }
+}
+
+@media (min-width: 767px) {
+    .front-container {
+        margin-left: 2em;
+    }
+}
+
+/*@media (min-width: 840px) {*/
+/*    .filebrowser {*/
+/*        margin: 0 0 0 0;*/
+/*    }*/
+/*}*/
+
+@media (min-width: 767px) {
+    .action-group {
+        margin-right: 10px;
+        right: 0;
+    }
+}
+
+@media (max-width: 767px) {
+    .action-group {
+        top: 3em;
+        /*margin: auto;*/
+    }
+
+    .action-box {
+        background-color: lightgray;
+        border-bottom-right-radius: 0.5rem;
+        border-bottom-left-radius: 0.5rem;
+        padding-top: 30px;
+    }
+
+    .action i {
+        margin: auto;
+    }
+
+    /*.filebrowser {*/
+    /*    margin: 2%;*/
+    /*}*/
+    .loader {
+        top: 4.8em;
+        width: 30px;
+        height: 30px;
+    }
+}
+
+.highlighted-file {
+    background-color: lightblue;
+}
+
+@media (max-width: 650px) {
+    .front-container {
+        margin: 0;
+        width: 100%;
+        top: 9em;
+    }
+}
+
+@media (min-width: 650px) {
+    .front-container {
+        width: 98%;
+        top: 8em;
+    }
+}
+
+@media (min-width: 767px) {
+    .front-container {
+        margin: 0 1em 0 1em;
+        width: 90%;
+        top: 4em;
+    }
+}
+
+@media (min-width: 1024px) {
+    .front-container {
+        margin: auto;
+    }
+}
+
+.front-container {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+    padding-bottom: 100px;
+}
+
+.filebrowser-search {
+    border-style: solid;
+    border-width: 2px;
+    border-color: var(--main-red);
+}

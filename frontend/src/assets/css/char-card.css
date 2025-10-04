@@ -1,0 +1,65 @@
+.card-v2-dl-button {
+    background-color: #723498;
+}
+
+.card-v2-dl-button:disabled {
+    background-color: #795297;
+    cursor: not-allowed;
+}
+
+@media (min-width: 1830px) {
+    .char-card-grid {
+        @apply grid-cols-5;
+    }
+
+    .char-card-left {
+        @apply col-span-1 pr-4;
+    }
+
+    .char-card-right {
+        @apply col-span-4;
+    }
+}
+
+@media (max-width: 1830px) {
+    .char-card-grid {
+        @apply grid-cols-4;
+    }
+
+    .char-card-left {
+        @apply col-span-1 pr-4;
+    }
+
+    .char-card-right {
+        @apply col-span-3;
+    }
+}
+
+@media (max-width: 1430px) {
+    .char-card-grid {
+        @apply grid-cols-3;
+    }
+
+    .char-card-left {
+        @apply col-span-1 pr-4;
+    }
+
+    .char-card-right {
+        @apply col-span-2;
+    }
+}
+
+@media (max-width: 1300px) {
+    .char-card-grid {
+        @apply grid-cols-1 gap-3;
+        grid-auto-rows: max-content;
+    }
+
+    .char-card-right {
+        @apply col-span-1;
+    }
+
+    .char-card-left {
+        @apply col-span-1 pr-0;
+    }
+}

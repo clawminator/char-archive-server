@@ -1,0 +1,24 @@
+/**
+ * For more details on how to configure Wrangler, refer to:
+ * https://developers.cloudflare.com/workers/wrangler/configuration/
+ */
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "char-archive-images",
+  "main": "src/index.ts",
+  "compatibility_date": "2025-04-04",
+  "placement": {
+    "mode": "smart"
+  },
+  "routes": [
+    {
+      "pattern": "https://char-archive.example.com/api/v1/image/external*",
+      "zone_id": "b29c601f80eabbfd64b4ee62a132a5c5"
+    }
+  ],
+  "observability": {
+    "enabled": true,
+    "head_sampling_rate": 1
+  },
+  "logpush": true
+}
