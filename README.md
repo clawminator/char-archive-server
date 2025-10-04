@@ -19,7 +19,7 @@ Remember to have fun.
 
 Like the website says, this project was created to archive a unique moment in AI history. It was pretty successful as well:
 
-![mato month](matomo stats/mato month.png)
+![mato month](https://git.evulid.cc/cyberes/char-archive-server/raw/branch/master/matomo%20stats/mato%20month.png)
 
 The site was showing very strong growth and visitors across the world were downloading all sorts of cards. Unfortunately, I was not able to devote any more time to running a complex website with many moving parts.
 
