@@ -4,9 +4,24 @@ _Website and backend server for the Character Archive._
 
 This is the source code for the char-archive website. The software stack consists of a Python backend, Postgres database, Vue.js frontend, and Meilisearch index.
 
+Be aware of the fact that the scrapers are pulling extremely questionable data from across the internet. Any shitty content is hosted under your name.
+
 No commit history is provided because this project wasn't developed for public consumption of the source.
 
 Remember to have fun.
+
+
+
+## About the Project
+
+> Chatbots powered by artificial intelligence have been around for decades, but only recently have they become capable of engaging in human-like interactivity. Following the release of OpenAI's GPT-3.5 in March of 2022, creative individuals discovered that the AI could take on "personalities" and role-play as a character. A community formed around chatting with these "bots" and sharing the "character cards" that defined a personality. Concerned about the capabilities of the AI and the creativity of the users, the corporations that owned the AI models took steps to restrict this activity, claiming it was "out of scope" and "unsafe". 
+> The Character Archive was created to protect this creativity. 
+
+Like the website says, this project was created to archive a unique moment in AI history. It was pretty successful as well:
+
+![mato month](matomo stats/mato month.png)
+
+The site was showing very strong growth and visitors across the world were downloading all sorts of cards. Unfortunately, I was not able to devote any more time to running a complex website with many moving parts.
 
 
 
@@ -43,7 +58,7 @@ CT. 12 cores, 13GB RAM. Runs the website and database.
 3. Import the database and put the files somewhere
 4. Figure out where the database connection config strings are (there are a few) and enter your details
 5. Enable and start the Systemd timers
-6. Enable and start the `archive-server`  service
+6. Enable and start the `archive-server` service
 7. Enable and start the `frontend-msg` service
 8. Deploy the image proxy Cloudflare Worker in `Workers/image-proxy` 
 9. Install the GeoIP database (see `GeoIP.md`)
@@ -91,9 +106,9 @@ I recommend setting this value in the config.
 
 ```yaml
 thirdparty_test_urls:
-  - https://rentry.org/8ygmz29h
-  - https://files.catbox.moe/1hvrlj.png
-  - https://gateway.chub.ai/search?excludetopics=&first=20&page=1&namespace=*&search=sex&include_forks=true&nsfw=false&nsfw_only=false&require_custom_prompt=false&require_example_dialogues=false&require_images=false&require_expressions=false&nsfl=false&asc=false&min_ai_rating=0&min_tokens=50&max_tokens=100000&chub=true&require_lore=false&exclude_mine=true&require_lore_embedded=false&require_lore_linked=false&sort=default&min_tags=2&topics=&inclusive_or=false&recommended_verified=false&require_alternate_greetings=false&count=false
+ - https://rentry.org/8ygmz29h
+ - https://files.catbox.moe/1hvrlj.png
+ - https://gateway.chub.ai/search?excludetopics=&first=20&page=1&namespace=*&search=sex&include_forks=true&nsfw=false&nsfw_only=false&require_custom_prompt=false&require_example_dialogues=false&require_images=false&require_expressions=false&nsfl=false&asc=false&min_ai_rating=0&min_tokens=50&max_tokens=100000&chub=true&require_lore=false&exclude_mine=true&require_lore_embedded=false&require_lore_linked=false&sort=default&min_tags=2&topics=&inclusive_or=false&recommended_verified=false&require_alternate_greetings=false&count=false
 
 ```
 
