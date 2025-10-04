@@ -50,7 +50,7 @@ CT. 12 cores, 13GB RAM. Runs the website and database.
 10. Install node.js version `22.15.0`
 11. Go to `search-parser/` and do `npm install`
 12. Enable and start the `search-parser.service`
-13. Download the latest release of [example/crazy-file-server](https://github.com/example/crazy-file-server). This serves the file browser and was originally built for serving the entire archive when it was just a collection of raw files. An example config file is located at `backend/crazyfs.yaml`. Don't worry about setting up Elasticsearch it isn't needed anymore.
+13. Download the latest release of [cyberes/crazy-file-server](https://git.evulid.cc/cyberes/crazy-file-server). This serves the file browser and was originally built for serving the entire archive when it was just a collection of raw files. An example config file is located at `backend/crazyfs.yaml`. Don't worry about setting up Elasticsearch it isn't needed anymore.
 14. Install and enable `crazyfs.service`
 15. Set up the nginx website. An example config is provided.
 
@@ -82,7 +82,7 @@ CT. 10 cores, 34GB RAM (could shrink these down probably 50%). Runs exclusively 
 CT. 4 cores, 4GB RAM. Runs a proxy router/load balancer. I don't recommend running this on a cloud VM as you will be moving multiple terabytes of data per month.
 
 1. Set up or gain access to at least 1 proxy server. Squid works fine.
-2. Download the latest release from [github.com/example/proxy-loadbalancer/releases](https://github.com/example/proxy-loadbalancer/releases). I put it in `/srv/loadbalancer`.
+2. Download the latest release from [cyberes/proxy-loadbalancer/releases](https://git.evulid.cc/cyberes/proxy-loadbalancer/releases). I put it in `/srv/loadbalancer`.
 3. Follow the `README.md` file in `proxy-loadbalancer` to install it
 
 
@@ -139,7 +139,7 @@ VM. 8 cores, 45GB RAM. Ran the web scrapers.
 
 1. Create a new non-root user
 2. Change to that user
-3. `git clone https://github.com/example/chub-archive-scraper`
+3. `git clone https://git.evulid.cc/cyberes/chub-archive-scraper`
 4. Create a venv and install the requirements
 5. Install the services in `systemd/` and enable the timers
 
